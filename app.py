@@ -3,7 +3,7 @@ newrelic.agent.initialize('/Users/stigskilbred/2 Work/apps/python/flask_blog/new
 
 import sqlite3
 import logging
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, url_for, flash, redirect, abort
 from werkzeug.exceptions import abort
 
 def get_db_connection():
@@ -83,3 +83,8 @@ def delete(id):
     conn.close()
     flash('"{}" was successfully deleted!'.format(post['title']))
     return redirect(url_for('index'))
+
+@app.route('/500')
+def error500():
+    app.logger.warn('Error Level 500')
+    abort(500)

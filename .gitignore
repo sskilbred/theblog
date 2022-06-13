@@ -1,0 +1,3 @@
+newrelic.ini
+*.db
+*.pyc

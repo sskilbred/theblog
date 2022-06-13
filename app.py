@@ -1,5 +1,5 @@
 import newrelic.agent
-newrelic.agent.initialize('/Users/stigskilbred/2 Work/apps/python/flask_blog/newrelic.ini')
+newrelic.agent.initialize('/Users/stigskilbred/2 Work/apps/python/theblog/newrelic.ini')
 
 import sqlite3
 import logging
